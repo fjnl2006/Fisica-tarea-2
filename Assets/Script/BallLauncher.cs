@@ -8,7 +8,14 @@ public class BallLauncher : MonoBehaviour
      public bool canLaunch;
     [SerializeField] private float contador = 0;
     [SerializeField] private float startTime;
+    
+    [Header("Camera Settings")]
+    public float mouseSensitivity = 13f;
+    [SerializeField] private float smoothing = 60f;
 
+    [Header("Input System")]
+    [SerializeField] private InputActionReference InputSystem_Actions;
+    
     public static BallLauncher Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +28,8 @@ public class BallLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentMouseLook.x += mouseDelta.x * mouseSensitivity * Time.deltaTime;
+        transform.localRotation = Quaternion.Euler(0f, currentMouseLook.x, 0f);   
     }
 
     public void OnLaunch(InputAction.CallbackContext context)
@@ -29,9 +37,6 @@ public class BallLauncher : MonoBehaviour
         if (context.started && canLaunch)
         {
             startTime = Time.time;
-            
-            
-
         }
         if (context.canceled && canLaunch)
         { 
@@ -43,5 +48,10 @@ public class BallLauncher : MonoBehaviour
             
             canLaunch = false;
         }
+    }
+
+    public void OnLook()
+    {
+       
     }
 }
