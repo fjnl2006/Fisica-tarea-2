@@ -15,6 +15,8 @@ public class BallLauncher : MonoBehaviour
 
     [Header("Input System")]
     [SerializeField] private InputActionReference InputSystem_Actions;
+    public Vector2 currentMouseLook = Vector2.zero;
+    
     
     public static BallLauncher Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +29,8 @@ public class BallLauncher : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        Vector2 mouseDelta = InputSystem_Actions.action.ReadValue<Vector2>();
         currentMouseLook.x += mouseDelta.x * mouseSensitivity * Time.deltaTime;
         transform.localRotation = Quaternion.Euler(0f, currentMouseLook.x, 0f);   
     }
