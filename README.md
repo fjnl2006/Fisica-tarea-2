@@ -3,14 +3,23 @@ Para evaluar los scripts individuales de físicas (Ejercicio2 al Ejercicio7, Mov
 
 Dependiendo del ejercicio a probar, vincula el evento correspondiente en la pestaña Events arrastrando el objeto y seleccionando la función de la lista dinámica (Dynamic CallbackContext):
 Archivo de Script,Funcionalidad Evaluada,Acción de Input (Event),Función a seleccionar
+
 MovingCar.cs,Ej. 1: AddForce (Force),Move,MovingCar.OnMove
+
 Ejercice2.cs,Ej. 2: WASD AddForce,Move,Ejercice2.OnMove
+
 Ejercicio3.cs,Ej. 3: Aceleración y Frenado,Move,Ejercicio3.OnMove
+
 Ejercicio4.cs,Ej. 4: Control con Velocity,Move,Ejercicio4.OnMove
+
 Ejercicio5.cs,Ej. 5: Salto (Impulse),Jump,Ejercicio5.OnJump
+
 Ejercicio6.cs,Ej. 6: Aceleración continua,Move,Ejercicio6.OnMove
+
 Ejercicio7.cs,Ej. 7: AddTorque (Rotación),Move,Ejercicio7.OnMove
+
 ExplosionController.cs,Ej. 8: AddExplosionForce,Explosion,ExplosionController.OnExplosion
+
 PARTE 2: Simulación de Bolos (Colliders y Físicas Aplicadas)
 Esta escena es un minijuego funcional. La mecánica consiste en orientar la cámara con el ratón, mantener pulsada la tecla Espacio para cargar fuerza, y soltarla para lanzar la bola. Si la bola sale de la pista, reaparecerá en su punto de origen automáticamente.
 
